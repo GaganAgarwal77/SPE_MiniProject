@@ -5,12 +5,6 @@ pipeline {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "Maven"
     }
-    environment
-    {
-        registry = "gaganagarwal77/spe-calculator"
-        registryCredential = "docker-spe"
-        dockerImage = ""
-    }
 
     stages {
         stage('Build') {
@@ -28,8 +22,10 @@ pipeline {
         stage('build docker image') {
             steps {
                 script {
-                    dockerImage = docker.build(registry + ":latest")
-                    dockerImage.push()
+                    dockerImage = docker.build("gaganagarwal77/spe-calculator:latest")
+                    docker.withRegistry('https://hub.docker.com/', "docker-spe") {
+                        dockerImage.push()
+                    }
                 }
             }
         }   
