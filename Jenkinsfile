@@ -30,6 +30,19 @@ pipeline {
                 bat 'docker push gaganagarwal77/spe-calculator:latest'
             }
         }
-            
+        stage('Clean Up') {
+            steps {
+                bat "docker rmi gaganagarwal77/spe-calculator:latest" 
+            }
+        } 
+        
+        // stage('Ansible pull image') {
+        //     steps {
+        //         ansiblePlaybook colorized: true,
+        //         installation: 'Ansible',
+        //         inventory: 'inventory',
+        //         playbook: 'playbook.yml'
+        //     }
+        // }
     }
 }
