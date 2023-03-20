@@ -21,7 +21,7 @@ pipeline {
 
         stage('build docker image') {
             steps {
-                bat 'docker build -it gaganagarwal77/spe-calculator:latest .'
+                bat 'docker build -t gaganagarwal77/spe-calculator:latest .'
             }
         }
         stage('push docker image') {
