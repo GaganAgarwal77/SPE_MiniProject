@@ -116,7 +116,6 @@ public class App
 	            }
 
 	            else if(optionNum.equals("0")) {
-	            	scanner.close();
 	            	System.out.println("Exited!");
 	            	break;
 	            }
