@@ -1,0 +1,1 @@
+%{TIMESTAMP_ISO8601:timestamp} \[%{WORD:thread}\] %{WORD:log_level} %{DATA:app_info} - \[%{DATA:calculation_type}\] \[%{WORD:calculation_status}\] %{NUMBER:calculation_input1:float}( %{NUMBER:calculation_input2:float})?( \[%{WORD:result_type}\] %{NUMBER:result:float})?

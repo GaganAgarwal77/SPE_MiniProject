@@ -17,23 +17,20 @@ public class App
     
 	double squareRoot(double x) {
         if(x < 0) {
-            logger.info("[SQUARE ROOT] [FAILED] " + x);
-            logger.info("[RESULT - SQUARE ROOT] [INVALID INPUT] -1");
+			logger.info("[SQUARE ROOT] [FAILED] " + x + " [RESULT] -1");
             return -1;
         }
 
         double ans = Math.sqrt(x);
 
-        logger.info("[SQUARE ROOT] [SUCCESS] " + x);
-        logger.info("[RESULT - SQUARE ROOT] " + ans);
+		logger.info("[SQUARE ROOT] [SUCCESS] " + x + " [RESULT] " + ans);
 
         return ans;
 	}
 
 	double factorial(double x) {
         if(x < 0) {
-            logger.info("[FACTORIAL] [FAILED] " + x);
-            logger.info("[RESULT - FACTORIAL] [INVALID INPUT] -1");
+            logger.info("[FACTORIAL] [FAILED] " + x + " [RESULT] -1");
             return -1;
         }
      
@@ -42,23 +39,20 @@ public class App
             ans *= i;
         }
 
-        logger.info("[FACTORIAL] [SUCCESS] " + x);
-        logger.info("[RESULT - FACTORIAL] " + ans);
+        logger.info("[FACTORIAL] [SUCCESS] " + x + " [RESULT] " + ans);
 
         return ans;
 	}
 
 	double ln(double x) {
         if(x <= 0) {
-            logger.info("[LOGARITHM] [FAILED] -1 " + x);
-            logger.info("[RESULT - LOGARITHM] [INVALID INPUT] -1");
+            logger.info("[LOGARITHM] [FAILED] " + x + " [RESULT] -1");
             return -1;
         }
 
         double ans = Math.log(x);
 
-        logger.info("[LOGARITHM] [SUCCESS] " + x);
-        logger.info("[RESULT - LOGARITHM] " + ans);
+		logger.info("[LOGARITHM] [SUCCESS] " + x + " [RESULT] " + ans);
 
         return ans;
 	}
@@ -66,8 +60,7 @@ public class App
 	double power(double x, double b) {
         double ans = Math.pow(x, b);
 
-        logger.info("[POWER] [SUCCESS] " + x + " " + b);
-        logger.info("[RESULT - POWER] " + ans);
+        logger.info("[POWER] [SUCCESS] " + x + " " + b +  " [RESULT] " + ans);
 
         return ans;
 	}
