@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                bat "set"
                 // Get some code from a GitHub repository
                 git branch: 'main', credentialsId: '20323', url: 'https://github.com/GaganAgarwal77/SPE_MiniProject.git'
                 // Run Maven on a Unix agent.
@@ -38,10 +39,13 @@ pipeline {
         
         stage('Ansible pull image') {
             steps {
-                ansiblePlaybook colorized: true,
-                installation: 'Ansible',
-                inventory: 'inventory',
-                playbook: 'playbook.yml'
+                // bat "wsl -e ansible-playbook playbook.yml"
+                bat "docker pull gaganagarwal77/spe-calculator:latest"
+                bat "docker run -i -t --name spe-calculator -d gaganagarwal77/spe-calculator"
+                // ansiblePlaybook colorized: true,
+                // installation: 'Ansible',
+                // inventory: 'inventory',
+                // playbook: 'playbook.yml'
             }
         }
     }
